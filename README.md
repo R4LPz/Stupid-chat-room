@@ -34,7 +34,7 @@ Para se conectar ao servidor por um cliente execute o arquivo client.py:
 $ python ./app/client.py 
 ```
 
-# Documentação e links úteis
+## Documentação e links úteis
 
 Para mais informações, você pode visitar a documentação da biblioteca [Socket](https://docs.python.org/pt-br/3/howto/sockets.html) do python e a própria [Documentação](https://docs.python.org/3/) da linguagem.
 
