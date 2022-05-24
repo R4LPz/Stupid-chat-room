@@ -30,3 +30,5 @@ while True:
     print('recive a connection from: ', address)
     chat_members.append(connection)
     start_new_thread(client_process, (connection,address))
+
+server_socket.close()
