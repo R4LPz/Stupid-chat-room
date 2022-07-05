@@ -8,8 +8,11 @@ Este repositório consistem em uma CLI construída em python para simular um sis
 ```
 .
 ├── app
-│   ├── client.py
-│   └── server.py
+│   ├── backups
+│   ├── client.py
+│   ├── logs
+│   │   └── 2022-07-05.log
+│   └── server.py
 └── README.md
  
 ```
