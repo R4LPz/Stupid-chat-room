@@ -1,37 +1,38 @@
 # Chat room
 
-Este repositório consistem em uma CLI construída em python para simular um sistema de chat publico em tempo real.
+O projeto consiste em uma sala de chat pública via linha de comando, através da conexão feita por sockets, é possível se comunicar com outros usuários online e executar comandos dentro da sala. 
+A construção foi baseada nos antigos IRC's, porém de forma simplista, sendo ela construída em python3 e utilizando a interface de sockets da linguagem.
+
 *PS: Este é um código com finalidade de aprendizado e não deve ser usado em produção*
 
 ## Sobre
 
+Como dito anteriormente, o  projeto foi construido para ser o mais simples possível, funcionando sobre uma interface de sockets, o código consiste basicamente na criação de uma arquitetura client-servidor onde o servidor atua como um ponto de acesso, recebendo conexões e criando para cada uma delas, uma thread que permite com que o usuário envie e receba mensagens instantâneas, bem como execute comandos predefinidos pelo servidor. 
+
+A estrutura é composta por dois arquivos principais, e dois diretórios auxiliares. Sendo que o serve atua como um intermediados dos comando enviados pelos vários clients conectados a ele. A seguir a estrutura de diretórios que o sistema opera:
+
 ```
-.
-├── app
-│   ├── backups
-│   ├── client.py
-│   ├── logs
-│   │   └── 2022-07-05.log
-│   └── server.py
-└── README.md
+    .
+    ├── app
+    │   ├── backups
+    │   ├── logs
+    │   ├── client.py
+    │   └── server.py
+    └── README.md
  
 ```
 
-O projeto foi construido para ser o mais simples possível, basicamente seu funcionamento consiste em criar um ponto de acesso que recebe uma conexão e cria uma thread que permite que a mesma envie e receba mensagens em tempo real. 
-
-A estrutura consiste em dois arquivos principais, o servidor, responsável por estabelecer uma interface de comunicação entre pontos conectados e o cliente, responsável por entregar ao usuário uma CLI passível de leitura e escrita de mensagens no chat publico do server.
-
 ## Execução 
 
-Para executar o projeto você precisará instalar o python em sua máquina. [Documentação](https://www.python.org/downloads/)
+Para a execução do projeto, é necessário que você tenha o python3 instalado em sua máquina. Caso não tenha, efetue o download e instalação seguindo a [Documentação](https://www.python.org/downloads/).
 
-Inicialmente execute o comando a seguir para executar o servidor e disponibilizar uma porta de conexão:
+Com o python instalado, você deve querer executar inicialmente o servidor, isso pode ser feito através do comando a seguir:
 
 ``` 
 $ pyhton ./app/server.py
 ```
 
-Para se conectar ao servidor por um cliente execute o arquivo client.py:
+Com o servidor operando corretamente, a porta 6666 estará em uso e é nela onde o client deve se conectar, para isso execute o seguinte comando:
 
 ``` 
 $ python ./app/client.py 
